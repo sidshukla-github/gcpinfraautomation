@@ -3,3 +3,5 @@ steps:
   args: ['config', 'set', 'project', 'fluent-archway-239902']
 - name: gcr.io/cloud-builders/gcloud
   args: ['deployment-manager', 'deployments', 'list']
+-name: gcr.io/cloud-builders/gcloud
+  args: ['deployment-manager', 'deployments', 'create', 'first', '--configuration', 'createvm.yaml']
