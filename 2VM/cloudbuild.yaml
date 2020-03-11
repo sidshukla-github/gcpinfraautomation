@@ -5,6 +5,6 @@ steps:
   entrypoint: 'bash'
   args: [ '-c', 'ls -la']
 - name: gcr.io/cloud-builders/gcloud
-  args: ['deployment-manager', 'deployments', 'create', 'first', '--config=2VM/two-vms.yaml']
+  args: ['deployment-manager', 'deployments', 'create', 'second', '--config=2VM/two-vms.yaml']
 - name: gcr.io/cloud-builders/gcloud
   args: ['deployment-manager', 'deployments', 'list']
