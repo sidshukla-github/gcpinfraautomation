@@ -3,7 +3,7 @@ steps:
   args: ['config', 'set', 'project', 'fluent-archway-239902']
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
-  args: [ '-c', test.sh]
+  args: [ '-c', '. test.sh']
 - name: gcr.io/cloud-builders/gcloud
   args: ['deployment-manager', 'deployments', 'create', 'first', '--config=SimpleVM/createvm.yaml']
 - name: gcr.io/cloud-builders/gcloud
