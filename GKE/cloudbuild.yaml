@@ -1,0 +1,7 @@
+steps:
+- name: gcr.io/cloud-builders/gcloud
+  args: ['config', 'set', 'project', 'fluent-archway-239902']
+- name: gcr.io/cloud-builders/gcloud
+  args: ['deployment-manager', 'deployments', 'create', 'second', '--config=GKE/gke.yaml']
+- name: gcr.io/cloud-builders/gcloud
+  args: ['deployment-manager', 'deployments', 'list']
