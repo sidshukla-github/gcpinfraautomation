@@ -5,8 +5,8 @@ resources:
     # The properties of the resource depend on the type of resource. For a list
     # of properties, see the API reference for the resource.
     zone: us-central1-f
-    # Replace fluent-archway-239902 with your project ID
-    machineType: https://www.googleapis.com/compute/v1/projects/fluent-archway-239902/zones/us-central1-f/machineTypes/f1-micro
+    # Replace gcptestbed-270905 with your project ID
+    machineType: https://www.googleapis.com/compute/v1/projects/gcptestbed-270905/zones/us-central1-f/machineTypes/f1-micro
     disks:
     - deviceName: boot
       type: PERSISTENT
@@ -16,9 +16,9 @@ resources:
         # See a full list of image families at https://cloud.google.com/compute/docs/images#os-compute-support
         # The format of the sourceImage URL is: https://www.googleapis.com/compute/v1/projects/[IMAGE_PROJECT]/global/images/family/[FAMILY_NAME]
         sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/family/debian-9
-    # Replace fluent-archway-239902 with your project ID
+    # Replace gcptestbed-270905 with your project ID
     networkInterfaces:
-    - network: https://www.googleapis.com/compute/v1/projects/fluent-archway-239902/global/networks/default
+    - network: https://www.googleapis.com/compute/v1/projects/gcptestbed-270905/global/networks/default
       # Access Config required to give the instance a public IP address
       accessConfigs:
       - name: External NAT

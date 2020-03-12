@@ -1,6 +1,8 @@
 steps:
 - name: gcr.io/cloud-builders/gcloud
   args: ['config', 'set', 'project', 'gcptestbed-270905']
+- name: gcr.io/cloud-builders/gcloud
+  args: ['deployment-manager', 'deployments', 'delete', 'first']
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args: [ '-c', '. SimpleVM/test.sh']
