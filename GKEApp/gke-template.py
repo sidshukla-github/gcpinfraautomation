@@ -27,7 +27,7 @@ def GenerateConfig(unused_context):
           'zone': 'us-central1-f',
           'cluster': {
                   'name': 'gkecluster',
-                  'initialNodeCount': 4
+                  'initialNodeCount': 2
           }
           
       }
