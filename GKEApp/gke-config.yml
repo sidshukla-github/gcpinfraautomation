@@ -1,0 +1,41 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "myapp"
+  namespace: "default"
+  labels:
+    app: "app"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "app"
+  template:
+    metadata:
+      labels:
+        app: "app"
+    spec:
+      containers:
+      - name: "nginx-1"
+        image: "nginx:latest"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "myapp-hpa-yhw1"
+  namespace: "default"
+  labels:
+    app: "app"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "myapp"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+  - type: "Resource"
+    resource:
+      name: "cpu"
+      targetAverageUtilization: 80

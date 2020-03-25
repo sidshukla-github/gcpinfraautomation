@@ -1,0 +1,13 @@
+steps:
+- name: gcr.io/cloud-builders/gcloud
+  args: ['config', 'set', 'project', 'gcptestbed-270905']
+- name: gcr.io/cloud-builders/gcloud
+  args: ['deployment-manager', 'deployments', 'create', 'second', '--config=GKEApp/gke.yaml']
+- name: gcr.io/cloud-builders/gcloud
+  args: ['deployment-manager', 'deployments', 'list']
+- name: gcr.io/cloud-builders/gke-deploy
+  args:
+  - run
+  - --filename=GKEApp/gke-config.yml
+  - --image=gcr.io/google-samples/hello-app:1.0
+  - --cluster=gkecluster
