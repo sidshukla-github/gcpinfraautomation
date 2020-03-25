@@ -11,3 +11,4 @@ steps:
   - --filename=GKEApp/gke-config.yml
   - --image=gcr.io/google-samples/hello-app:1.0
   - --cluster=gkecluster
+  - --location=us-central1-f
