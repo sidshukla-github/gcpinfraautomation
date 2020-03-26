@@ -5,20 +5,20 @@ metadata:
   name: "myapp"
   namespace: "default"
   labels:
-    app: "app"
+    app: "myapp"
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: "app"
+      app: "myapp"
   template:
     metadata:
       labels:
-        app: "app"
+        app: "myapp"
     spec:
       containers:
-      - name: "nginx-1"
-        image: "nginx:latest"
+      - name: "hello-app"
+        image: "gcr.io/google-samples/hello-app:1.0"
 ---
 apiVersion: "autoscaling/v2beta1"
 kind: "HorizontalPodAutoscaler"
@@ -32,7 +32,7 @@ spec:
     kind: "Deployment"
     name: "myapp"
     apiVersion: "apps/v1"
-  minReplicas: 2
+  minReplicas: 3
   maxReplicas: 4
   metrics:
   - type: "Resource"
