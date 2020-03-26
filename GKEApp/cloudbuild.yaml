@@ -18,3 +18,6 @@ steps:
   - --type=LoadBalancer
   - --port=80
   - --target-port=8080
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-f'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=gkecluster'
