@@ -12,7 +12,7 @@ steps:
   - --image=gcr.io/google-samples/hello-app:1.0
   - --cluster=gkecluster
   - --location=us-central1-f
-- name: gcr.io/cloud-builders/gke-deploy
+- name: gcr.io/cloud-builders/kubectl
   args:
   - expose deployment myapp
   - --type=LoadBalancer
