@@ -12,3 +12,9 @@ steps:
   - --image=gcr.io/google-samples/hello-app:1.0
   - --cluster=gkecluster
   - --location=us-central1-f
+- name: gcr.io/cloud-builders/gke-deploy
+  args:
+  - expose deployment myapp
+  - --type=LoadBalancer
+  - --port=80
+  - --target-port=8080
