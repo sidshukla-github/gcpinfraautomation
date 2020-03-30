@@ -23,5 +23,5 @@ resources:
 - name: a-new-network
   type: compute.v1.network
   properties:
-    zone: ZONE_TO_RUN
+    zone: us-central1-f
       
